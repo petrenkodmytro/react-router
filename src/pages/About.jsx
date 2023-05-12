@@ -1,6 +1,16 @@
-import { Link, Outlet } from 'react-router-dom';
+import { LinkPage } from 'components/SharedLayout.styled';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
-export const About = () => {
+import styled from 'styled-components';
+const List = styled.ul`
+  /* list-style: none; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const About = () => {
   return (
     <main>
       <h1>About Us</h1>
@@ -17,19 +27,24 @@ export const About = () => {
         dolorum illum voluptatum dolores! Quas perferendis quis alias excepturi
         eaque voluptatibus eveniet error, nulla rem iusto?
       </p>
-      <ul>
+      <List>
         <li>
-          <Link to="mission">Read about our mission</Link>
+          <LinkPage to="mission">Read about our mission</LinkPage>
         </li>
         <li>
-          <Link to="team">Get to know the team</Link>
+          <LinkPage to="team">Get to know the team</LinkPage>
         </li>
         <li>
-          <Link to="reviews">Go through the reviews</Link>
+          <LinkPage to="reviews">Go through the reviews</LinkPage>
         </li>
-      </ul>
-      {/* вказати де саме в компоненті батьківського маршруту <About> ми хочемо рендерувати дочірні маршрути. Для цього у React Router є компонент <Outlet>. */}
-      <Outlet />
+      </List>
+
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        {/* вказати де саме в компоненті батьківського маршруту <About> ми хочемо рендерувати дочірні маршрути. Для цього у React Router є компонент <Outlet>. */}
+        <Outlet />
+      </Suspense>
     </main>
   );
 };
+
+export default About;

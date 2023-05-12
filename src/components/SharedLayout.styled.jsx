@@ -22,6 +22,10 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.p`
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   margin: 0;
 `;

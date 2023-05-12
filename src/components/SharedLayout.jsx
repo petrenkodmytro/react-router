@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Container, Header, Logo, LinkPage } from './SharedLayout.styled';
+import { Suspense } from 'react';
+import { AiOutlineLaptop } from 'react-icons/ai';
 
 export const SharedLayout = () => {
   return (
@@ -7,7 +9,7 @@ export const SharedLayout = () => {
       <Header>
         <Logo>
           <span role="img" aria-label="computer icon">
-            💻
+            <AiOutlineLaptop />
           </span>{' '}
           GoMerch Store
         </Logo>
@@ -17,7 +19,10 @@ export const SharedLayout = () => {
           <LinkPage to="/products">Products</LinkPage>
         </nav>
       </Header>
-      <Outlet />
+
+      <Suspense fallback={<div>Loading page...</div>}>
+        <Outlet />
+      </Suspense>
     </Container>
   );
 };
