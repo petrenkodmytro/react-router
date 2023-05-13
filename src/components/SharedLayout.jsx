@@ -17,6 +17,7 @@ export const SharedLayout = () => {
           <LinkPage to="/">Home</LinkPage>
           <LinkPage to="/about">About</LinkPage>
           <LinkPage to="/products">Products</LinkPage>
+          <LinkPage to="/formlogin">Login</LinkPage>
         </nav>
       </Header>
 

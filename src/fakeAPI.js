@@ -8,7 +8,13 @@ const products = [
     { id: "s-4", name: "Sneakers 4" },
     { id: "p-1", name: "Pants 1" },
     { id: "p-2", name: "Pants 2" },
-    { id: "p-3", name: "Pants 3" }
+    { id: "p-3", name: "Pants 3" },
+    { id: "m-1", name: "Meat 1" },
+    { id: "m-2", name: "Meat 2" },
+    { id: "m-3", name: "Meat 3" },
+    { id: "a-1", name: "Apple 1" },
+    { id: "a-2", name: "Apple 2" },
+    { id: "a-3", name: "Apple 3" }
   ];
   
   export const getProducts = () => {
